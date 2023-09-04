@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="{{ asset('css/Index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/Form.css') }}">
 
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
