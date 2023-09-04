@@ -3,17 +3,16 @@
     padding: 0;
 }
 
-html {
+html{
+
+    scroll-behavior: smooth;
+}
+body{
+    height: 100%;   
+    width: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.699), rgba(0, 0, 0, 0.562)), url('/images/bg.png') no-repeat;
     background-size: cover;
     background-attachment: fixed;
-}
-
-body{
-    height: 100%;
-    width: 100%;
-   
-
 }
 
 
@@ -33,7 +32,8 @@ nav{
     position: sticky;
     
     
-}   
+} 
+
 nav ul{
     list-style: none;
     display: flex;
@@ -48,14 +48,30 @@ nav a{
     text-decoration: none;
     font-size: 25px;
     letter-spacing: 3px;
+    height: stretch;
+}
+nav img{
+    height: 100px;
+}  
+nav #mcName{
+    font-size: 14px;
+    margin-top: -25px;
 }
 nav h1{
-    font-size: 35px;
+    margin-left: 20px;
+    font-family: cursive;
+    letter-spacing: 2px;
+    text-align: center;
 }
-nav a.active{
-    color: yellowgreen;
+nav li.active{
+    color:greenyellow;
     text-decoration: dashed;
     border-bottom: solid;
+    background-color: rgba(128, 128, 128, 0.281);
+    
+}
+nav li:hover{
+    background-color: gray;
 }
 
 /*HOME PAGE*/
@@ -181,7 +197,134 @@ align-items: center;
     color: red;
 }
 
+/* Menu Page */
+.menu-Container{
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.menu-selection-Card{
+    height: 40vh;
+    width: 25vh;
+    background-color: green;
+}
+.menu-Container h1{
+    display: flex;
+    font-weight: 100;
+    font-size: 67px;
+   margin-bottom: 100px;
+}
+.menu-Card-Selection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+.menu-Card-Selection a{
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    font-size: 50px;
+}
+    
 
+.menu-Card-Selection li{
+    height: 50vh;
+    width: 40vh;
+    border : 1px solid;
+    margin: 20px;
+    list-style: none;
+    text-align: center;
+    border-radius: 20px;
+    
+}
+.menu-Card-Selection li:hover{
+    box-shadow: 0px 0px 10px yellow;
+    cursor: pointer;
+}
+.Food-Container{
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+}
+.Food-Container h1{
+    margin-bottom: 100px;
+    font-size: 67px;
+}
+.Food-Container ul{
+    display: flex;
+    gap: 2%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.Food-Card-Menu{
+    height: 40vh;
+    width: 40vh;
+    display: flex;
+    border: 1px solid;
+    margin-bottom: 100px;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    color: black;
+    background-color: wheat;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.Food-Card-Menu:hover{
+box-shadow:  0px 0px 20px yellowgreen;
+}
+.Food-name p{
+    margin: 0;
+}
+.Food-name h2{
+    font-size: 30px;
+    margin-top: 14%;
+}
+.Food-name{
+    font-family: Arial;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bolder;
+    font-size: 150%;
+}
+.Food-Card-Menu img{
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+.Food-Description{
+    font-size: 20px;
+}
+.back-btn{
+    height: 30px;
+    width: 60px;
+    position: absolute;
+    float: left;
+    margin-top: 17px;
+    left: 10%;
+    background-color: transparent;
+    border-style: none;
+}.back-btn a{
+    text-decoration: none;
+    font-size: 50px;
+    color: white;
+}
+.back-btn :hover{
+    color: yellowgreen;
+}
+/* FOOTER */
 footer{
     height: 70vh;
     display: flex;

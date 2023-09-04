@@ -1,63 +1,13 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Mihanz Catering') }}</title>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/Index.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/Form.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/Pages.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/Services.css') }}">
-
-    <!-- Favicon -->
-    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
-
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
-    <style>
-        .navbar-nav .nav-link {
-            color: white;
-            font-size: 24px;
-        }
-
-        .navbar-brand {
-            font-size: 24px;
-        }
-
-        nav img{
-            height: 100px;
-        }
-        nav #mcName{
-            font-size: 14px;
-            margin-top: -25px;
-        }
-
-    </style>
-</head>
-<body>
-    <div id="app">
-
-    <nav class="navbar navbar-expand-md navbar-dark bg-green shadow-sm">
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                <h1><img src="../IMAGES/LOGO.png" alt="MC-LOGO">
-        <p id="mcName">{{ config('app.name', 'Mihanz Catering') }}</p></h1>
-
+                    {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
 
@@ -67,19 +17,19 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
-                        <li class="nav-item" >
-                                    <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
+                        <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Home') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/menu') }}">{{ __('Menu') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Menu') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/services') }}">{{ __('Services') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Services') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/themes') }}">{{ __('Theme') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Theme') }}</a>
                                 </li>
-<!--                             @if (Route::has('login'))
+                            @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
@@ -89,7 +39,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif -->
+                            @endif
                         @else
 
                         <li class="nav-item">
@@ -105,8 +55,8 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Theme') }}</a>
                                 </li>
 
-
-
+                        
+                        
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -129,42 +79,3 @@
                 </div>
             </div>
         </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-</body>
-
-<script src="/USER/JS/Pork.js"></script>
-
-
-
-<footer>
-    <h1>
-        Mihanz <br/> Catering
-    </h1>
-
-    <ul>
-        <li>
-            <label for="getInTouch">Get in touch</label>
-            <br/><a href="https://www.facebook.com/profile.php?id=100066545202436" target="_blank" rel="noreferrer"><FaFacebook/>Facebook</a>
-        </li>
-        <li>
-            <label for="Contact">Contact</label><br/>
-            <a href="#"> <FaMobileScreen/>0926-563-1143 <br/>
-               <FaMobileScreen/> 0916-412-2250</a>
-         </li>
-         <li>
-            <label for="Location">Location</label> <br/>
-            <a href="https://goo.gl/maps/eYMwkLUwLh3tVrsLA" target="_blank" rel="noreferrer"><FaMapLocationDot/> Calderon St. Subic
-                Baliwag, Bulacan</a>
-         </li>
-            <a href="./ADMIN/Index.html"> Admin</a>
-    </ul>
-
-</footer>
-
-<script></script>
-
-</html>

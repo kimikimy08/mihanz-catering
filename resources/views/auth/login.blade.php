@@ -2,35 +2,7 @@
 
 @section('content')
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mihanz Catering | Home</title>
-    <link rel="stylesheet" href="/USER/CSS/Form.css">
-</head>
-<nav>
-    <h1>Mihanz Catering</h1>
 
-    <ul>
-        <li>
-            <a href="./Home.html"><FaHouseChimney/> Home</a>
-        </li>
-        <li>
-            <a href="./Menu.html"><FaBookOpen/> Menu</a>
-        </li>
-        <li>
-            <a href="./Services.html"><MdFoodBank/> Services</a>
-        </li>
-        <li>
-            <a href="./Themes.html"><FaBrush/> Themes</a>
-        </li>
-    </ul>
-
-
-</nav>
-<body>
     <div class="Login-Container">
             
 
@@ -63,31 +35,5 @@
         </form>
 </div>
     
-</body>
-<footer>
-    <h1>
-        Mihanz <br/> Catering
-    </h1>
-
-    <ul>
-        <li>
-            <label for="getInTouch">Get in touch</label>
-            <br/><a href="https://www.facebook.com/profile.php?id=100066545202436" target="_blank" rel="noreferrer"><FaFacebook/>Facebook</a>
-        </li>
-        <li>
-            <label for="Contact">Contact</label><br/>
-            <a href="#"> <FaMobileScreen/>0926-563-1143 <br/>
-               <FaMobileScreen/> 0916-412-2250</a>
-         </li>
-         <li>
-            <label for="Location">Location</label> <br/>
-            <a href="https://goo.gl/maps/eYMwkLUwLh3tVrsLA" target="_blank" rel="noreferrer"><FaMapLocationDot/> Calderon St. Subic
-                Baliwag, Bulacan</a>
-         </li>
-            <a href="/ADMIN/Index.html"> Admin</a>
-    </ul>
-   
-</footer>
-</html>
 
 @endsection

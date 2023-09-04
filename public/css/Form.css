@@ -3,14 +3,12 @@
     padding: 0;
 }
 
-html{
-    background:linear-gradient( rgba(0, 0, 0, 0.699), rgba(0, 0, 0, 0.562)), url("../IMAGES/Untitled\ design\ \(1\).png"), no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}
 body{
     height: 100%;   
     width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.699), rgba(0, 0, 0, 0.562)), url('/images/bg.png') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 

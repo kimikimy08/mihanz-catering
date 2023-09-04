@@ -35,6 +35,8 @@ Route::middleware(['auth', 'role:user'])->group(function () {
 
 
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
+Route::view('/menu', 'guest.menu');
+Route::view('/services', 'guest.services');
+Route::view('/themes', 'guest.themes');

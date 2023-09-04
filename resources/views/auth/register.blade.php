@@ -2,35 +2,7 @@
 
 @section('content')
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mihanz Catering | Home</title>
-    <link rel="stylesheet" href="/USER/CSS/Form.css">
-</head>
-<nav>
-    <h1>Mihanz Catering</h1>
 
-    <ul>
-        <li>
-            <a href="./Home.html"><FaHouseChimney/> Home</a>
-        </li>
-        <li>
-            <a href="./Menu.html"><FaBookOpen/> Menu</a>
-        </li>
-        <li>
-            <a href="./Services.html"><MdFoodBank/> Services</a>
-        </li>
-        <li>
-            <a href="./Themes.html"><FaBrush/> Theme</a>
-        </li>
-    </ul>
-
-
-</nav>
-<body>
     <div class="SignUp-Container">
         
     <form  class="SignUp-Form" method="POST" action="{{ route('register') }}">
@@ -104,9 +76,7 @@
             
             </div>
     
-</body>
 
-</html>
 
 
 @endsection
