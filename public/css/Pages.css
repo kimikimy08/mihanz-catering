@@ -246,6 +246,7 @@ align-items: center;
     box-shadow: 0px 0px 10px yellow;
     cursor: pointer;
 }
+
 .Food-Container{
     color: white;
     height: 100%;
@@ -359,4 +360,121 @@ footer a{
 }
 footer a:hover{
     color: yellowgreen;
+}
+
+/* MENU */
+.menu-Card-Selection li:nth-child(1){
+    background-image: linear-gradient(rgba(0,0,0,50%),rgba(0,0,0,50%)),url(/USER/IMAGES/crispy\ pata\ \(pork\ menu.jpg);
+    background-size: cover ;
+    background-position: center
+}.menu-Card-Selection li:nth-child(2){
+    background-image: linear-gradient(rgba(0,0,0,50%),rgba(0,0,0,50%)),url(/USER/IMAGES/caldereta\ beef\ \(beef\ menu\).jpg);
+    background-size: cover ;
+    background-position: center
+}.menu-Card-Selection li:nth-child(3){
+    background-image: linear-gradient(rgba(0,0,0,50%),rgba(0,0,0,50%)),url(/USER/IMAGES/ChickenMenu.jpg);
+    background-size: cover ;
+    background-position-x: -64px;
+}.menu-Card-Selection li:nth-child(4){
+    background-image: linear-gradient(rgba(0,0,0,50%),rgba(0,0,0,50%)),url(/USER/IMAGES/sweet\ n\ sour\ fish\ fillet.jpg);
+    background-size: cover ;
+    background-position: center;
+}.menu-Card-Selection li:nth-child(5){
+    background-image: linear-gradient(rgba(0,0,0,50%),rgba(0,0,0,50%)),url(/USER/IMAGES/seafood.jpg);
+    background-size: cover ;
+    background-position: center;
+}.menu-Card-Selection li:nth-child(6){
+    background-image: linear-gradient(rgba(0,0,0,50%),rgba(0,0,0,50%)),url(/USER/IMAGES/chicken-pancit-sotanghon-guisado-recipe.jpg);
+    background-size: cover ;
+    background-position: center;
+}.menu-Card-Selection li:nth-child(7){
+    background-image: linear-gradient(rgba(0,0,0,50%),rgba(0,0,0,50%)),url(/USER/IMAGES/vegetable.jpg);
+    background-size: cover ;
+    background-position: center;
+}.menu-Card-Selection li:nth-child(8){
+    background-image: linear-gradient(rgba(0,0,0,50%),rgba(0,0,0,50%)),url(/USER/IMAGES/filipino-fruit-salad-1.jpg);
+    background-size: cover ;
+    background-position: center;
+}.menu-Card-Selection li:nth-child(9){
+    background-image: linear-gradient(rgba(0,0,0,50%),rgba(0,0,0,50%)),url(/USER/IMAGES/Southern-Sweet-Tea-3-of-6-scaled.jpg);
+    background-size: cover ;
+    background-position: center;
+    background-position-y: -64px;
+}
+.menu-Card-Selection a:hover{
+    font-size: 60px;
+    background:linear-gradient(rgba(0,0,0,50%),rgba(0,0,0,50% ));
+    border-radius: 10px;
+}
+.userProfileContainer{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+
+}
+.userProfileContainer ul{
+    list-style: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    text-align: center;
+}
+.userProfileContainer li{
+    background: rgb(255, 255, 255);
+    height: 5vh;
+    width: 60vh;
+    font-size: 30px;
+    border-radius: 10px;
+}
+#userImage{
+    height: 20vh;
+    width: 20vh;
+    border: solid;
+    border-radius: 20px; 
+}
+#btn-update{
+    background-color: yellowgreen;
+    width: 24vh;
+    height: 5vh;
+    margin: 20px;
+    border-radius: 6px;
+    font-size: 22px;
+    border:none;
+}
+
+
+.userEditProfileContainer{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+.userEditProfileContainer h1 {
+    font-size: 50px;
+    color: yellowgreen;
+}
+.userEditProfileContainer form{
+    height: 55vh;
+    background-color: #ffffff78;
+
+    width: 50%;
+    border-radius: 20px;
+    margin-bottom: 100px;
+}
+.userEditProfileContainer label {
+    font-size: 25px;
+    margin: 20px;
+}
+.userEditProfileContainer input {
+    height: 5vh;
+    width: 60%;
+    font-size: 20px;
+    border-radius: 6px;
+    padding: 2px;
+    border-style: none;
 }

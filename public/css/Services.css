@@ -65,6 +65,10 @@ nav li.active{
 nav li:hover{
     background-color: gray;
 }
+#userProfile{
+    height: 50px;
+    border-radius: 25px;
+}
 
 
 

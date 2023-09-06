@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('profile_pic')->default('profile_pics/user-profile-default.jpg');
             $table->rememberToken();
             $table->timestamps();
             $table->unsignedBigInteger('role_id');

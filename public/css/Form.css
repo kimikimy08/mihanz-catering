@@ -124,6 +124,9 @@ nav li:hover{
     align-items: center;
     margin-bottom: 100px ;
 }
+
+
+
 .SignUp-Container h1{
     font-size: 40px;
     width: 100%;
@@ -156,6 +159,8 @@ nav li:hover{
     font-size: 25px;
     margin: 10px;
 }
+
+
 
 footer{
     height: 70vh;

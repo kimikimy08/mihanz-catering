@@ -5,31 +5,31 @@
 
         <div><h1>Menu Selection</h1></div>
         <ul class="menu-Card-Selection">
-            <li>
+        <li id="Pork">
                 <a href="./menuPages/porkMenu.html">Pork</a>
             </li>
-            <li>
+            <li id="Beef">
                 <a href="./menuPages/beefMenu.html">Beef</a>
             </li>
-            <li>
+            <li id="Chicken">
                 <a href="./menuPages/chickenMenu.html">Chicken</a>
             </li>
-            <li>
+            <li id="Fish">
                 <a href="./menuPages/fishMenu.html">Fish</a>
             </li>
-            <li>
+            <li id="Seafood">
                 <a href="./menuPages/seaFoodMenu.html">SeaFood</a>
             </li>
-            <li>
+            <li id="Pasta">
                 <a href="./menuPages/pastaMenu.html">Pasta</a>
             </li>
-            <li>
+            <li id="Vegetables">
                 <a href="./menuPages/vegetablesMenu.html">Vegetables</a>
             </li>
-            <li>
+            <li id="Desserts">
                 <a href="./menuPages/dessertsMenu.html">Desserts</a>
             </li>
-            <li>
+            <li id="Drinks">
                 <a href="./menuPages/drinksMenu.html">Drinks</a>
             </li>
         </ul>

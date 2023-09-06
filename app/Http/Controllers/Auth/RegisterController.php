@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Role;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -78,4 +79,15 @@ class RegisterController extends Controller
             'role_id' => $userRole->id,
         ]);
     }
+
+
+    protected function authenticated(Request $request, $user)
+{
+    if ($user->hasRole('admin')) {
+        return redirect()->route('admin.dashboard');
+    }
+
+    return redirect()->route('user.dashboard');
+}
+
 }

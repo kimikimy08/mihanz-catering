@@ -24,15 +24,17 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin-dashboard', 'App\Http\Controllers\AdminController@index')->name('admin.dashboard');
+    Route::get('/user/{id}', 'App\Http\Controllers\UserController@show')->name('user.show');
+    Route::get('/user/{id}/edit', 'App\Http\Controllers\UserController@edit')->name('user.edit');
+    Route::put('/user/{id}', 'App\Http\Controllers\UserController@update')->name('user.update');
 });
 
 Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/user-dashboard', 'App\Http\Controllers\UserController@index')->name('user.dashboard');
+    Route::get('/user/{id}', 'App\Http\Controllers\UserController@show')->name('user.show');
+    Route::get('/user/{id}/edit', 'App\Http\Controllers\UserController@edit')->name('user.edit');
+    Route::put('/user/{id}', 'App\Http\Controllers\UserController@update')->name('user.update');
 });
-
-
-
-
 
 
 
@@ -40,3 +42,4 @@ Auth::routes();
 Route::view('/menu', 'guest.menu');
 Route::view('/services', 'guest.services');
 Route::view('/themes', 'guest.themes');
+Route::view('/userprofile', 'userprofile.index');

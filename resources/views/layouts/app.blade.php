@@ -49,7 +49,7 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-green shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                <h1><img src="../IMAGES/LOGO.png" alt="MC-LOGO">
+                <h1><img src="{{ asset('images/logo.png') }}" alt="MC-LOGO">
         <p id="mcName">{{ config('app.name', 'Mihanz Catering') }}</p></h1>
 
                 </a>
@@ -79,7 +79,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/themes') }}">{{ __('Theme') }}</a>
                                 </li>
-<!--                             @if (Route::has('login'))
+                           @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
@@ -89,20 +89,25 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif -->
+                            @endif 
                         @else
 
-                        <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Home') }}</a>
+                                <li class="nav-item">
+                                     @if (auth()->user()->hasRole('admin'))
+                                    <a class="nav-link" href="{{ route('admin.dashboard') }}">{{ __('Dashboard') }}</a>
+                                    @else
+                                    <a class="nav-link" href="{{ route('user.dashboard') }}">{{ __('Dashboard') }}</a>
+                                    @endif
+
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Menu') }}</a>
+                                    <a class="nav-link" href="{{ url('/menu') }}">{{ __('Menu') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Services') }}</a>
+                                    <a class="nav-link" href="{{ url('/services') }}">{{ __('Services') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Theme') }}</a>
+                                    <a class="nav-link" href="{{ url('/themes') }}">{{ __('Theme') }}</a>
                                 </li>
 
 
@@ -113,6 +118,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('user.show', ['id' => auth()->user()->id]) }}">
+                                        {{ __('User Profile') }}
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
