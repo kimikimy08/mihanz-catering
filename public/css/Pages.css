@@ -472,9 +472,35 @@ footer a:hover{
 }
 .userEditProfileContainer input {
     height: 5vh;
-    width: 60%;
+    width: 75vh;
     font-size: 20px;
     border-radius: 6px;
-    padding: 2px;
+    padding: 10px;
     border-style: none;
+}
+
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table, th, td {
+    text-align: left;
+}
+
+
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 5px;
+    }
 }

@@ -9,34 +9,40 @@
         @csrf
         @method('PUT')
 
-    <div class="form-group">
-            <label for="address">Name:</label>
-            <input type="text" id="name" name="name" value="{{ $user->name }}">
+        <div class="table-container">
+
+   <table class="responsive-table">
+   <tr>
+            <td><label for="address">Name:</label></td>
+            <td><input type="text" id="name" name="name" value="{{ $user->name }}"></td>
+   </tr>  
+
+   <tr>
+   <td><label for="address">Address:</label></td>
+   <td><input type="text" id="address" name="address" value="{{ $user->address }}"></td>
+</tr>
+
+            <tr>   
+            <td><label for="contact_number">Contact Number:</label></td>
+            <td><input type="text" id="contact_number" name="contact_number" value="{{ $user->contact_number }}"></td>
+</tr>
+
+            <tr>   
+            <td><label for="email">Email:</label></td>
+            <td><input type="email" id="email" name="email" value="{{ $user->email }}"></td>
+</tr>
+
+            <tr>
+            <td><label for="profile_pic">Profile Picture:</label></td>
+            <td><input type="file" id="profile_pic" name="profile_pic" ></td>
+</tr>
+   </table>
+       
         </div>
 
-        <div class="form-group">
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address" value="{{ $user->address }}">
-        </div>
-
-        <div class="form-group">
-            <label for="contact_number">Contact Number:</label>
-            <input type="text" id="contact_number" name="contact_number" value="{{ $user->contact_number }}">
-        </div>
-
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" value="{{ $user->email }}">
-        </div>
-
-        <div class="form-group">
-            <label for="profile_pic">Profile Picture:</label>
-            <input type="file" id="profile_pic" name="profile_pic" >
-        </div>
-
-        <div class="form-group">
+       
             <button type="submit" id="btn-update">Update Profile</button>
-        </div>
+        
     </form>
 </div>
 

@@ -13,20 +13,20 @@ class ServicesSelectionSeeder extends Seeder
      */
     public function run(): void
     {
-        $servicesSelection = [
+        $serviceSelection = [
             [
                 'services_category' => 'Birthday',
-                'services_image' => 'images/pork.jpeg',
+                'services_image' => 'filbd.jpg',
             ],
             [
                 'services_category' => 'Baptismal',
-                'services_image' => 'images/pork.jpeg', 
+                'services_image' => 'filb.jpg', 
             ],
             
         ];
 
-        foreach ($servicesSelection as $item) {
-            DB::table('services_selection')->insert($item);
+        foreach ($serviceSelection as $item) {
+            DB::table('service_selections')->insert($item);
         }
     }
 }

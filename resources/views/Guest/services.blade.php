@@ -5,13 +5,12 @@
         <h1>Services</h1>
 
         <ul >
-            <li class="bd">
-                <a href="../PHP/servicesPromo/birthdayPromo/bdpIndex.html">Birthday</a>
-            </li>
+            @foreach ($servicesItems as $key => $servicesItem)
+            <li  class="bd" style="background-image: linear-gradient(rgba(0,0,0,50%),rgba(0,0,0,50%)), url({{ $servicesItem->services_image }});">
+                <a href="">{{ $servicesItem->services_category }}</a>
+                </li>
+            @endforeach
 
-            <li class="bp">
-                <a href="../PHP/servicesPromo/baptsimalPromo/bpIndex.html">Baptismal</a>
-            </li>
         </ul>
         </div>
     

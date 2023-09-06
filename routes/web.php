@@ -36,10 +36,11 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     Route::put('/user/{id}', 'App\Http\Controllers\UserController@update')->name('user.update');
 });
 
+Route::get('/menu', 'App\Http\Controllers\MenuController@index')->name('guest.menu');
+Route::get('/services', 'App\Http\Controllers\ServiceController@index')->name('guest.services');
+
 
 
 Auth::routes();
-Route::view('/menu', 'guest.menu');
-Route::view('/services', 'guest.services');
 Route::view('/themes', 'guest.themes');
 Route::view('/userprofile', 'userprofile.index');
