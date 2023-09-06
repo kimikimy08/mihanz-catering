@@ -12,6 +12,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     <link rel="stylesheet" href="{{ asset('css/Index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/Form.css') }}">
     <link rel="stylesheet" href="{{ asset('css/Pages.css') }}">
