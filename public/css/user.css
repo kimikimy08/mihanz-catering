@@ -1,0 +1,120 @@
+/* bookingContainer */
+
+.container .title {
+    font-size: 50px;
+    color: yellowgreen;
+}
+
+.dashboardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 100%;
+}
+.dashboardContainer ul{
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.dashboardContainer a{
+   color:inherit;
+   text-decoration: none;
+}
+.dashboardContainer li{
+
+    height: 20vh;
+    width: 30vh;
+    display: flex;
+    flex-direction: column;
+}
+.dashboardContainer h1{
+    font-weight: bolder;
+    width: 100%;
+    text-align: center;
+    border-bottom: solid 3px rgba(255, 255, 255, 0.637);
+    font-size: 25px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dashboardContainer p{
+    font-size: 60px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboardContainer li:nth-child(1){
+background-color: red;
+}.dashboardContainer li:nth-child(2){
+    background-color: goldenrod;
+    }.dashboardContainer li:nth-child(3){
+        background-color: green;
+        }.dashboardContainer li:nth-child(4){
+            background-color: palevioletred;
+            }.dashboardContainer li:nth-child(5){
+                background-color: firebrick;
+                }.dashboardContainer li:nth-child(6){
+                    background-color:burlywood;
+                    }
+
+.adminMenuNav{
+
+    display: flex;
+}
+.adminMenuNav ul{
+
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.adminMenuNav li{
+
+    width: 30vh;
+    height: 20vh;
+    border: solid;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.adminMenuNav li:hover{
+    background-color: rgba(128, 128, 128, 0.219);
+}
+.adminMenuNav a{
+
+    color: white;
+    text-decoration: none;
+            
+}
+.menu-nav{
+    display: flex;
+}
+.menu-nav ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    list-style: none;
+
+}
+.menu-nav li{
+
+}
+.menu-nav a{
+    color: inherit;
+    font-size: 25px;
+    text-decoration: none;
+}
