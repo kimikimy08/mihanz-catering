@@ -50,7 +50,7 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     Route::put('/user/{id}', 'App\Http\Controllers\UserController@update')->name('user.update');
 });
 
-Route::get('/menu', 'App\Http\Controllers\MenuController@index')->name('guest.menu');
+Route::get('/menus', 'App\Http\Controllers\MenuController@index')->name('guest.menus');
 Route::get('/services', 'App\Http\Controllers\ServiceController@index')->name('guest.services');
 Route::get('/themes', 'App\Http\Controllers\ServiceController@themesindex')->name('guest.themes');
 

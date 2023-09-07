@@ -12,7 +12,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 
     <!-- Favicon -->
@@ -31,7 +31,11 @@
         <li class="{{ Request::is('adminServices*') ? 'active' : '' }}"><a href="adminServices.html">Services</a></li>
         <li class="{{ Request::is('bookings*') ? 'active' : '' }}"><a href="{{ url('/bookings') }}">Bookings</a></li>
         <li class="{{ Request::is('reservations*') ? 'active' : '' }}"><a href="{{ url('/reservations') }}">Reservation</a></li>
-        <li><a href="../Index.html">Log Out</a></li>
+        <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Log Out</a></li>
+                                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
     </ul>
 </nav>
 <body>

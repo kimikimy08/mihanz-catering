@@ -14,7 +14,7 @@ class MenuController extends Controller
         foreach ($menuItems as $menuItem) {
             $menuItem->menu_image = asset("images/menu/menu_selection/".rawurlencode($menuItem->menu_image));
         }
-        return view('guest.menu', compact('menuItems'));
+        return view('guest.menus', compact('menuItems'));
     }
 
 

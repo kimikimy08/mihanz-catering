@@ -74,7 +74,7 @@
                                     <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/menu') }}">{{ __('Menu') }}</a>
+                                    <a class="nav-link" href="{{ url('/menus') }}">{{ __('Menu') }}</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/services') }}">{{ __('Services') }}</a>
@@ -104,7 +104,7 @@
 
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/menu') }}">{{ __('Menu') }}</a>
+                                    <a class="nav-link" href="{{ url('/menus') }}">{{ __('Menu') }}</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/services') }}">{{ __('Services') }}</a>

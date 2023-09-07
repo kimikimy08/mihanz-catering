@@ -118,7 +118,7 @@ nav li:hover{
 .dashboardContainer{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: row;                 
     height: 100%;
 }
 .dashboardContainer ul{
