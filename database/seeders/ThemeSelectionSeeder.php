@@ -29,10 +29,8 @@ class ThemeSelectionSeeder extends Seeder
             ['theme_name' => 'Baptismal 2', 'theme_image' => 'baptismal2.jpg', 'service_selection_id' => 2],
             ['theme_name' => 'Baptismal 3', 'theme_image' => 'baptismal3.jpg', 'service_selection_id' => 2],
             ['theme_name' => 'Baptismal 4', 'theme_image' => 'baptismal4.jpg', 'service_selection_id' => 2],
-            // Add more data as needed
         ];
 
-        // Loop through the data and insert into the 'themes' table
         foreach ($themesData as $theme) {
             ThemeSelection::create($theme);
         }

@@ -1,39 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin | Bookings</title>
-    <link rel="stylesheet" href="../CSS/admin.css">
-</head>
-<nav>
-    <ul>
-        <li><a href="/Index.html" id="logo"><img src="/ADMIN/IMAGES/LOGO.png" alt="LOGO"><p>mihanzcatering</p></a></li>
-        <li><a href="adminDashboard.html">Dashboard</a></li>
-        <li><a href="adminUsers.html">Users</a></li>
-        <li><a href="adminMenu.html">Menu</a></li>
-        <li><a href="adminThemes.html">Themes</a></li>
-        <li ><a href="adminServices.html">Services</a></li>
-        <li class="active"><a href="adminBookings.html">Bookings</a></li>
-        <li ><a href="adminReservation.html">Reservation</a></li>
-        <li><a href="../Index.html">Log Out</a></li>
-    </ul>
-</nav>
-<body>
-    <div class="container">
-    <h1>Bookings</h1>
-    <table>
-        <tbody>
-            <tr>
-                <th></th>
-            </tr>
-            <tr>
-                <td></td>
-            </tr>
-        </tbody>
-        
-    </table>
+@extends('layouts.header')
 
-</div>
-</body>
-</html>
+@section('content')
+<h1 class="title">Booking</h1>
+    <table>
+        <tr>
+            <th>R-ID</th>
+            <th>Name</th>
+            <th>Event</th>
+            <th>Package</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Location</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>mhzc112</td>
+            <td>John Cedric Iglesias</td>
+            <td>birthday</td>
+            <td>customize</td>
+            <td>09-23-23</td>
+            <td>12pm - 3pm</td>
+            <td></td>
+            <td><a href="./FORMS/Bookingdatatable.html">View</a></td>
+        </tr>
+</table>
+    
+    @endsection

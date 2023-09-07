@@ -12,8 +12,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/Index.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/Form.css') }}">
+    
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
@@ -21,5 +21,24 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
+<nav>
+    <ul>
+        <li><a href="/Index.html" id="logo"><img src="{{ asset('images/logo.png') }}" alt="Logo"><!-- <p>mihanzcatering</p> --></a></li>
+        <li class="active"><a href="adminDashboard.html">Dashboard</a></li>
+        <li><a href="{{ url('/users') }}">Users</a></li>
+        <li><a href="{{ route('admin.menu') }}">Menu</a></li>
+        <li><a href="adminThemes.html">Themes</a></li>
+        <li ><a href="adminServices.html">Services</a></li>
+        <li><a href="{{ url('/bookings') }}">Bookings</a></li>
+        <li><a href="{{ url('/reservations') }}">Reservation</a></li>
+        <li><a href="../Index.html">Log Out</a></li>
+    </ul>
+</nav>
 <body>
-    <div id="app">
+    <div class="container">
+        <main>
+    @yield('content')
+        </main>
+    </div>
+    </body>
+    </html>

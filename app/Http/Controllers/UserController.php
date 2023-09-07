@@ -61,4 +61,13 @@ class UserController extends Controller
 
         return 'profile_pics/' . $uniqueFilename;
     }
+
+    public function usermanagement()
+    {
+        $usersItems = User::all();
+        foreach ($usersItems as $usersItem) {
+            $usersItem->profile_pic = asset("storage/".rawurlencode($usersItem->profile_pic));
+        }
+        return view('admin.users', compact('usersItems'));
+    }
 }

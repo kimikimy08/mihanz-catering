@@ -1,92 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin | Menu</title>
-    <link rel="stylesheet" href="../CSS/admin.css">
-</head>
 
-<nav>
-    <ul>
-        <li><a href="/Index.html" id="logo"><img src="{{ asset('images/logo.png') }}" alt="LOGO"><p>mihanzcatering</p></a></li>        
-        <li><a href="adminDashboard.html">Dashboard</a></li>
-        <li><a href="adminUsers.html">Users</a></li>
-        <li class="active"><a href="adminMenu.html">Menu</a></li>
-        <li><a href="adminThemes.html">Themes</a></li>
-        <li ><a href="adminServices.html">Services</a></li>
-        <li><a href="adminBookings.html">Bookings</a></li>
-        <li><a href="adminReservation.html">Reservation</a></li>
-        <li><a href="../Index.html">Log Out</a></li>
+
+@extends('layouts.header')
+
+@section('content')
+    <h1 class="title">
+        @if(isset($menuCategory))
+            {{ $menuCategory->menu_category }} Menu
+        @else
+            All Menus
+        @endif
+    </h1>
+
+    @if(isset($menuCategories))
+        <div class="menu-nav">
+        <ul>
+        <li><a href="{{ route('admin.menu', 'all') }}" class="{{ Request::is('admin/menu/all*') ? 'active' : '' }}">All</a></li>
+        @foreach($menuCategories as $category)
+            <li><a href="{{ route('admin.menu', $category->menu_category) }}" class="{{ Request::is('admin/menu/' . $category->menu_category . '*') ? 'active' : '' }}">{{ $category->menu_category }}</a></li>
+        @endforeach
     </ul>
-</nav>
-<body>
-    <div class="container">
-        <h1 class="title">Menu</h1>
-
-        <div class="adminMenuNav">
-           <ul>
-
-            <li>
-                <a href="./adminMenuPages/porkMenu.html">
-                    Pork Menu
-                </a>
-            </li>
-
-            <li>
-                <a href="./adminMenuPages/beefMenu.html">
-                    Beef Menu
-                </a>
-            </li>
-
-            <li>
-                <a href="./adminMenuPages/chickenMenu.html">
-                    Chicken Menu
-                </a>
-            </li>
-
-            <li>
-                <a href="./adminMenuPages/fishMenu.html">
-                    Fish Menu
-                </a>
-            </li>
-
-            <li>
-                <a href="./adminMenuPages/seafoodMenu.html">
-                    Seafood Menu
-                </a>
-            </li>
-
-            <li>
-                <a href="./adminMenuPages/pastaMenu.html">
-                    Pasta Menu
-                </a>
-            </li>
-
-            <li>
-                <a href="./adminMenuPages/dessertMenu.html">
-                    Dessert Menu
-                </a>
-            </li>
-
-            <li>
-                <a href="./adminMenuPages/drinksMenu.html">
-                    Drinks Menu
-                </a>
-            </li>
-
-           </ul>
         </div>
+    @endif
 
-
-
-
-
-
-
-
-    </div>
-    
-    
-</body>
-</html>
+    @if(isset($menuItems))
+        <table>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Edit</th>
+            </tr>
+            @foreach($menuItems as $menu)
+                <tr>
+                    <td><img src="{{ asset($menu->menus_image) }}" alt="" id="userImage"></td>
+                    <td>{{ $menu->name }}</td>
+                    <td>{{ $menu->description }}</td>
+                    <td>{{ $menu->price }}</td>
+                    <td>{{ $menu->status }}</td>
+                    <td><a href="">Update</a></td>
+                </tr>
+            @endforeach
+        </table>
+    @endif
+@endsection

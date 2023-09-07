@@ -137,14 +137,14 @@ nav li:last-child{
     color:red;
 }
 nav img{
-    height: 80px;
+    height: 100px;
 }
 nav h1 {
     font-size: 20px;
     
 }
 #logo{
-    margin-top: -10px;
+    margin-top: 10px;
 }
 nav li:hover{
     background-color: rgba(128, 128, 128, 0.219);
@@ -221,6 +221,7 @@ nav li:hover{
 }
 .title{
     margin-bottom: 100px;
+    color: yellowgreen;
 }
 .dashboardContainer{
     display: flex;
@@ -306,6 +307,7 @@ background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white !important;
 
 }
 .adminMenuNav li:hover{
@@ -313,7 +315,7 @@ background-color: red;
 }
 .adminMenuNav a{
 
-    color: white;
+    color: white !important;
     text-decoration: none;
             
 }
@@ -331,10 +333,75 @@ background-color: red;
 
 }
 .menu-nav a{
-    color: inherit;
+    color: white;
     font-size: 25px;
     text-decoration: none;
 }
+
+.menu-nav li a.active {
+    text-decoration: underline !important;
+    color: blue !important;
+}
+
+.menu-nav li a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
+.menu-nav li a:hover {
+    text-decoration: underline;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    }
+    table {
+        margin-top: 20px;
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        border: solid 3px  white !important;
+      }
+      
+      td, th {
+        border: 1px solid white !important;
+        text-align: left;
+        padding: 8px;
+        color: white !important ;
+      }
+      th{
+        height: 30px;
+        font-size: 20px;
+        border: 3px solid white !important;
+        background-color: firebrick;
+        text-align: center !important;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd47;
+      }
+      td button{
+        width: 100%;
+        background: transparent;
+        color: white !important ;
+        border-style: none;
+        cursor: pointer;
+      }
+      td a{
+
+        color: blue ;
+      }
+
+#userImage {
+    max-width: 100px;
+    max-height: 100px;
+    display: block;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
 
 
 

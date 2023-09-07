@@ -12,4 +12,9 @@ class MenuSelection extends Model
     protected $fillable = [
         'menu_category'
     ];
+
+    public function menus()
+    {
+        return $this->hasMany(Menu::class);
+    }
 }

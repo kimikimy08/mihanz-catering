@@ -27,6 +27,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/user/{id}', 'App\Http\Controllers\UserController@show')->name('user.show');
     Route::get('/user/{id}/edit', 'App\Http\Controllers\UserController@edit')->name('user.edit');
     Route::put('/user/{id}', 'App\Http\Controllers\UserController@update')->name('user.update');
+    Route::get('/users', 'App\Http\Controllers\UserController@usermanagement')->name('admin.users');
+    Route::get('/menu/{category?}', 'App\Http\Controllers\MenuController@menu')->name('admin.menu');
+
 });
 
 Route::middleware(['auth', 'role:user'])->group(function () {
@@ -42,6 +45,9 @@ Route::get('/themes', 'App\Http\Controllers\ServiceController@themesindex')->nam
 
 
 
+
 Auth::routes();
 Route::view('/userprofile', 'userprofile.index');
 Route::view('/history', 'user.history');
+Route::view('/bookings', 'admin.bookings');
+Route::view('/reservations', 'admin.reservation');
