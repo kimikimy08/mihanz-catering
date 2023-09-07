@@ -38,9 +38,10 @@ Route::middleware(['auth', 'role:user'])->group(function () {
 
 Route::get('/menu', 'App\Http\Controllers\MenuController@index')->name('guest.menu');
 Route::get('/services', 'App\Http\Controllers\ServiceController@index')->name('guest.services');
+Route::get('/themes', 'App\Http\Controllers\ServiceController@themesindex')->name('guest.themes');
 
 
 
 Auth::routes();
-Route::view('/themes', 'guest.themes');
 Route::view('/userprofile', 'userprofile.index');
+Route::view('/history', 'user.history');
