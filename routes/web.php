@@ -31,14 +31,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/users/{user}', 'App\Http\Controllers\UserController@usermanagement_show')->name('users.show');
     Route::get('/users/create', 'App\Http\Controllers\UserController@usermanagement_create')->name('users.create');
 
-    // Routes for handling user creation form submission and editing
     Route::post('/users', 'App\Http\Controllers\UserController@usermanagement_store')->name('users.store');
     Route::get('/users/{user}/edit', 'App\Http\Controllers\UserController@usermanagement_edit')->name('users.edit');
     Route::put('/users/{user}', 'App\Http\Controllers\UserController@usermanagement_update')->name('users.update');
 
-    // Route for deleting a user
     Route::delete('/users/{user}','App\Http\Controllers\UserController@usermanagement_destroy')->name('users.destroy');
-
     Route::get('/menu/{category?}', 'App\Http\Controllers\MenuController@menu')->name('admin.menu');
 
 });
@@ -53,6 +50,7 @@ Route::middleware(['auth', 'role:user'])->group(function () {
 Route::get('/menus', 'App\Http\Controllers\MenuController@index')->name('guest.menus');
 Route::get('/services', 'App\Http\Controllers\ServiceController@index')->name('guest.services');
 Route::get('/themes', 'App\Http\Controllers\ServiceController@themesindex')->name('guest.themes');
+Route::get('/services/{serviceCategory}/promos', 'App\Http\Controllers\ServiceController@servicePromoIndex')->name('guest.servicePromoIndex');
 
 
 

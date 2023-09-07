@@ -12,4 +12,9 @@ class ServiceSelection extends Model
     protected $fillable = [
         'service_category'
     ];
+
+    public function service_promos()
+    {
+        return $this->hasMany(ServicePromo::class);
+    }
 }

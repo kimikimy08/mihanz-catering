@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             ServicesSelectionSeeder::class,
             ThemeSelectionSeeder::class,
             MenuSeeder::class,
+            ServicePromoSeeder::class,
     	]);
     }
 }
