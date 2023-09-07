@@ -28,6 +28,17 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/user/{id}/edit', 'App\Http\Controllers\UserController@edit')->name('user.edit');
     Route::put('/user/{id}', 'App\Http\Controllers\UserController@update')->name('user.update');
     Route::get('/users', 'App\Http\Controllers\UserController@usermanagement')->name('admin.users');
+    Route::get('/users/{user}', 'App\Http\Controllers\UserController@usermanagement_show')->name('users.show');
+    Route::get('/users/create', 'App\Http\Controllers\UserController@usermanagement_create')->name('users.create');
+
+    // Routes for handling user creation form submission and editing
+    Route::post('/users', 'App\Http\Controllers\UserController@usermanagement_store')->name('users.store');
+    Route::get('/users/{user}/edit', 'App\Http\Controllers\UserController@usermanagement_edit')->name('users.edit');
+    Route::put('/users/{user}', 'App\Http\Controllers\UserController@usermanagement_update')->name('users.update');
+
+    // Route for deleting a user
+    Route::delete('/users/{user}','App\Http\Controllers\UserController@usermanagement_destroy')->name('users.destroy');
+
     Route::get('/menu/{category?}', 'App\Http\Controllers\MenuController@menu')->name('admin.menu');
 
 });

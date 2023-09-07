@@ -70,4 +70,36 @@ class UserController extends Controller
         }
         return view('admin.users', compact('usersItems'));
     }
+
+    public function usermanagement_create()
+    {
+        return view('users.create');
+    }
+
+    public function usermanagement_store(Request $request)
+    {
+
+    }
+
+    public function usermanagement_edit($id)
+    {
+        $user = User::findOrFail($id);
+        return view('users.edit', compact('user'));
+    }
+
+    public function usermanagement_update(Request $request, $id)
+    {
+
+    }
+
+    public function usermanagement_show($id)
+    {
+        $user = User::findOrFail($id);
+        return view('users.show', compact('user'));
+    }
+
+    public function usermanagement_destroy($id)
+    {
+
+    }
 }

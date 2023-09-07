@@ -4,7 +4,6 @@
 }
 
 body{
-    height: 100vh;
     width: 100%;
     display: flex;
     color: white;
@@ -20,10 +19,6 @@ body{
 
 
 
-.wrapper {
-    display: flex;
-}
-
 #menu-toggle {
     display: none;
 }
@@ -37,37 +32,9 @@ body{
     z-index: 2;
 }
 
-.sidebar {
-    width: 250px;
-    background-color: #333;
-    color: #fff;
-    height: 100vh;
-    transition: transform 0.3s ease;
-    overflow-y: auto;
-}
 
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
 
-.sidebar li {
-    padding: 10px;
-    text-align: center;
-}
 
-.sidebar a {
-    text-decoration: none;
-    color: #fff;
-}
-
-.sidebar a:hover {
-    background-color: #555;
-}
-
-#menu-toggle:checked + .sidebar {
-    transform: translateX(0);
-}
 
 main {
     flex: 1;
@@ -91,39 +58,31 @@ main {
 }
 
 nav{
-    height: 100%;
-    width: 15%;
-    background-color:#0B360F;
-    font-family: Arial;
+    width: 300px;
+    background-color: #0B360F;
+    color: #fff;
+    min-height: 100vh; 
+    transition: transform 0.3s ease;
+    overflow-y: auto;
     display: flex;
-    flex-direction: column;
-    color: rgb(255, 255, 255);
+    flex-direction: column; 
 }
 nav ul{
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
+    padding: 0;
+    flex: 1
 }
 nav li{
-    
-    padding: 1rem;
-    height: 100%;
-    width: 80%;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 30px;
+
 }
 nav a{
-    display: flex;
-    text-align: center;
-    color: inherit;
     text-decoration: none;
-    font-size: 25px;
-    height: 100%;
-    letter-spacing: 3px;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    color: #fff;
 }
+
 nav p{
     font-size: 15px;
     margin-top: -15px;
@@ -149,79 +108,12 @@ nav h1 {
 nav li:hover{
     background-color: rgba(128, 128, 128, 0.219);
 }
-/* Log In */
 
-.Login-Container{
-    display: flex;
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.Login-Container h1 {
-    font-size: 50px;
-    
-    color: yellowgreen;
-}
-.Login-Container form{
-    display: flex;
-    height: 60vh;
-    background-color: #ffffff1e;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    border-radius: 20px;
-    margin-bottom: 100px;
-}
-.Login-Container label {
-    font-size: 25px;
-    margin: 20px;
-}
-.Login-Container input {
-    height: 5vh;
-    width: 60%;
-    font-size: 20px;
-    border-radius: 6px;
-    padding: 2px;
-    border-style: none;
-}
-.btn-Login {
-    margin-top: 20px;
-    display:flex;
-    position: relative;
-    justify-content: flex-end;
-}
-.btn-Login button{
-    background-color: #A2B92F;
-    width: 24vh;
-    height: 5vh;
-    margin: 20px;
-    border-radius: 6px;
-    font-size: 22px;
-    border:none;
-}
-.btn-Login button:hover{
-    box-shadow: 0px 0px 10px rgb(0, 0, 0);
 
-}
-.btn-Login button a{
-    text-decoration: none;
-    color:black;
-}
-
-/* bookingContainer */
-
-.container{
-    display: flex;
-    width: 100%;
-    padding: 40px;
-    flex-direction: column;
-}
 .title{
     margin-bottom: 100px;
     color: yellowgreen;
+    margin-top: 20px;
 }
 .dashboardContainer{
     display: flex;
@@ -402,7 +294,15 @@ main{
     vertical-align: middle;
 }
 
+.add-button {
+    text-align: right;
+    
 
+}
+
+.btn-primary {
+    width: 100px;
+}
 
 
 
