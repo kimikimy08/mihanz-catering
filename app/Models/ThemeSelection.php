@@ -14,7 +14,8 @@ class ThemeSelection extends Model
     ];
 
     public function serviceSelection()
-    {
-        return $this->belongsTo(ServiceSelection::class);
-    }
+{
+    return $this->belongsTo(ServiceSelection::class, 'service_selection_id', 'id');
+}
+    
 }

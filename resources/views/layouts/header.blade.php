@@ -23,12 +23,12 @@
 </head>
 <nav>
     <ul>
-    <li><a href="/Index.html" id="logo"><img src="{{ asset('images/logo.png') }}" alt="Logo"></a></li>
+    <li><a href="{{ url('/') }}" id="logo"><img src="{{ asset('images/logo.png') }}" alt="Logo"></a></li>
         <li class="{{ Request::is('admin-dashboard*') ? 'active' : '' }}"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
         <li class="{{ Request::is('users*') ? 'active' : '' }}"><a href="{{ url('/users') }}">Users</a></li>
         <li class="{{ Request::is('menu*') ? 'active' : '' }}"><a href="{{ route('admin.menu') }}">Menu</a></li>
-        <li class="{{ Request::is('adminThemes*') ? 'active' : '' }}"><a href="adminThemes.html">Themes</a></li>
-        <li class="{{ Request::is('adminServices*') ? 'active' : '' }}"><a href="adminServices.html">Services</a></li>
+        <li class="{{ Request::is('theme*') ? 'active' : '' }}"><a href="{{ route('admin.themes') }}">Themes</a></li>
+        <li class="{{ Request::is('service*') ? 'active' : '' }}"><a href="{{ route('admin.services') }}">Services</a></li>
         <li class="{{ Request::is('bookings*') ? 'active' : '' }}"><a href="{{ url('/bookings') }}">Bookings</a></li>
         <li class="{{ Request::is('reservations*') ? 'active' : '' }}"><a href="{{ url('/reservations') }}">Reservation</a></li>
         <li><a href="{{ route('logout') }}" onclick="event.preventDefault();

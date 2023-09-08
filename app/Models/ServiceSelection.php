@@ -17,4 +17,9 @@ class ServiceSelection extends Model
     {
         return $this->hasMany(ServicePromo::class);
     }
+
+    public function themeSelections()
+    {
+        return $this->hasMany(ThemeSelection::class);
+    }
 }

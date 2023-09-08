@@ -38,6 +38,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::delete('/users/{user}','App\Http\Controllers\UserController@usermanagement_destroy')->name('users.destroy');
     Route::get('/menu/{category?}', 'App\Http\Controllers\MenuController@menu')->name('admin.menu');
 
+    Route::get('/service', 'App\Http\Controllers\ServiceController@adminindex')->name('admin.services');
+
+    Route::get('/theme', 'App\Http\Controllers\ServiceController@admin_theme_index')->name('admin.themes');
+
 });
 
 Route::middleware(['auth', 'role:user'])->group(function () {

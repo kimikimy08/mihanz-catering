@@ -9,12 +9,17 @@
 <nav>
     <ul>
         <li><a href="{{ url('/') }}"><img src="{{ asset('images/logo.png') }}" alt=""><p><!-- mihanzcatering --></p></a></li>
-       <li class="active"><a href="UserDashboard.html">Dashboard</a></li>
+       <li class="active"><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
        <li><a href="{{ route('user.show', ['id' => auth()->user()->id]) }}">User Profile</a></li>
        <li><a href="{{ url('/menus') }}">Menu</a></li>
        <li><a href="{{ url('/themes') }}">Themes</a></li>
        <li><a href="Services.html">New Reservation</a></li>
        <li><a href="{{ url('/history') }}">History</a></li>
+       <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Log Out</a></li>
+                                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
 
     </ul>
 </nav>

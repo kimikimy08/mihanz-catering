@@ -37,6 +37,25 @@ class ServiceController extends Controller
         return view('guest.servicePromoIndex', compact('promos', 'categoryName'));
     }
 
+    public function adminindex () {
+        $services = ServiceSelection::all();
+        foreach ($services as $service) {
+            $service->services_image = asset("images/services/service_selection/".rawurlencode($service->services_image));
+        }
+        return view('admin.services', compact('services'));
+    }
+
+    public function admin_theme_index()
+    {
+        $themes = ThemeSelection::with('serviceSelection')->get();
+
+        foreach ($themes as $theme) {
+            $theme->theme_image = asset("images/themes/" . rawurlencode($theme->theme_image));
+        }
+
+        return view('admin.themes', compact('themes'));
+    }
+
     private function storeUniqueThemesPic($file, $userId)
     {
         $uniqueFilename = 'themes_' . time() . '.' . $file->getClientOriginalExtension();
