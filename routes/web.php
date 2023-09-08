@@ -48,6 +48,8 @@ Route::middleware(['auth', 'role:user'])->group(function () {
 });
 
 Route::get('/menus', 'App\Http\Controllers\MenuController@index')->name('guest.menus');
+Route::get('/menus/{category?}', 'App\Http\Controllers\MenuController@specificmenuindex')->name('guest.specific_menu');
+
 Route::get('/services', 'App\Http\Controllers\ServiceController@index')->name('guest.services');
 Route::get('/themes', 'App\Http\Controllers\ServiceController@themesindex')->name('guest.themes');
 Route::get('/services/{serviceCategory}/promos', 'App\Http\Controllers\ServiceController@servicePromoIndex')->name('guest.servicePromoIndex');

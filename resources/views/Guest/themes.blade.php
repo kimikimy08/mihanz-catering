@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+<link rel="stylesheet" href="{{ asset('css/Pages.css') }}">
 <section class="slider-wrapper">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">

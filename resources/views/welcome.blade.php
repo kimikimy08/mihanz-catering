@@ -2,6 +2,10 @@
 
 
 @section('content')
+
+    <link rel="stylesheet" href="{{ asset('css/Index.css') }}">
+
+
     <div class="landing_Page">
         <h1>Mihanz Catering Service</h1>
 

@@ -2,6 +2,11 @@
 
 @section('content')
 
+<link rel="stylesheet" href="{{ asset('css/user.css') }}">
+<link rel="stylesheet" href="{{ asset('css/Services.css') }}">
+<link rel="stylesheet" href="{{ asset('css/Form.css') }}">
+<link rel="stylesheet" href="{{ asset('css/Pages.css') }}">
+
 <div class="userEditProfileContainer">
     <h1>Edit Your Profile</h1>
 

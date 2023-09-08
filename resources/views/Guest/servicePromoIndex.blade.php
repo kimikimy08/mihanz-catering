@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+<link rel="stylesheet" href="{{ asset('css/Services.css') }}">
+
 <div class='Event-Container'>
         <div class="btn-position"><button class="back-btn"><a href="/services"><IoMdArrowRoundBack/></a></button></div> 
         <h1>

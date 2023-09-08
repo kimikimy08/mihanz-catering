@@ -3,6 +3,10 @@
 @section('content')
 
 
+<link rel="stylesheet" href="{{ asset('css/Form.css') }}">
+
+
+
     <div class="SignUp-Container">
         
     <form  class="SignUp-Form" method="POST" action="{{ route('register') }}">

@@ -1,13 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/user.css') }}">
+<link rel="stylesheet" href="{{ asset('css/Services.css') }}">
+<link rel="stylesheet" href="{{ asset('css/Form.css') }}">
+<link rel="stylesheet" href="{{ asset('css/Pages.css') }}">
+
     <div class="menu-Container">
 
         <div><h1>Menu Selection</h1></div>
         <ul class="menu-Card-Selection">
         @foreach ($menuItems as $key => $menuItem)
         <li id="Pork" style="background-image: linear-gradient(rgba(0,0,0,50%),rgba(0,0,0,50%)), url({{ $menuItem->menu_image }});">
-            <a href="">{{ $menuItem->menu_category }}</a>
+            <a href="/menus/{{ $menuItem->menu_category }}">{{ $menuItem->menu_category }}</a>
             </li>
             @endforeach
             

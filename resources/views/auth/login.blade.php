@@ -2,6 +2,9 @@
 
 @section('content')
 
+<link rel="stylesheet" href="{{ asset('css/Form.css') }}">
+
+
 
     <div class="Login-Container">
             
