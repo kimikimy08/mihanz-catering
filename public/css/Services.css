@@ -353,3 +353,42 @@ footer a{
 footer a:hover{
     color: yellowgreen;
 }
+
+/* Promos */
+.promo-container{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+#promo{
+    height: 70%;
+    border-radius: 10px;
+    
+}
+
+    
+
+.promo-btn {
+    height: 25px;
+    width: 100px;
+    position: absolute;
+    bottom: 16%;
+    border-radius: 5px;
+    right: 23%;
+    font-size: 20px;
+    border-style: none;
+    cursor: pointer;
+    background-color: #A2B92F;
+}
+.promo-btn:hover{
+    background-color: orange;
+}
+.back-btn{
+    text-decoration: none;
+    color: aliceblue;
+    font-weight: bolder;
+    font-size: 40px;
+    position: absolute;
+    top: 14%;
+    left: 23%;
+}

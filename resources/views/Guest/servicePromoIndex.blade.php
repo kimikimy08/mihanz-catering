@@ -12,14 +12,14 @@
         <ul>
             @foreach ($promos as $promo)
     <li>
-        <a href="">
-            <h1>{{ $promo->name }}</h1>
-            <p>{{ $promo->description }}</p>
-        </a>
+    <a href="{{ route('guest.servicePromoPic', ['serviceCategory' => $categoryName, 'servicePromo' => $promo->id]) }}">
+    <h1>{{ $promo->name }}</h1>
+    <p>{{ $promo->description }}</p>
+</a>
     </li>
 @endforeach
             <li>
-                <a href="bpCustomization.html">
+                <a href="{{ url('/services/customization') }}">
                     <h1>Customization base<br /> on your Budget</h1>
                 </a>
             </li>

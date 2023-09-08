@@ -57,6 +57,8 @@ Route::get('/menus/{category?}', 'App\Http\Controllers\MenuController@specificme
 Route::get('/services', 'App\Http\Controllers\ServiceController@index')->name('guest.services');
 Route::get('/themes', 'App\Http\Controllers\ServiceController@themesindex')->name('guest.themes');
 Route::get('/services/{serviceCategory}/promos', 'App\Http\Controllers\ServiceController@servicePromoIndex')->name('guest.servicePromoIndex');
+Route::get('/services/{serviceCategory}/promos/{servicePromo}', 'App\Http\Controllers\ServiceController@servicePromoPic')->name('guest.servicePromoPic');
+
 
 
 
@@ -66,3 +68,4 @@ Route::view('/userprofile', 'userprofile.index');
 Route::view('/history', 'user.history');
 Route::view('/bookings', 'admin.bookings');
 Route::view('/reservations', 'admin.reservation');
+Route::view('/services/customization', 'guest.customization');

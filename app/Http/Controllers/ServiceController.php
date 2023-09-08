@@ -37,6 +37,25 @@ class ServiceController extends Controller
         return view('guest.servicePromoIndex', compact('promos', 'categoryName'));
     }
 
+    public function servicePromoPic($serviceCategory, $servicePromo)
+    {
+        // Retrieve the service category and promo by their slugs or IDs
+        $category = ServiceSelection::where('services_category', $serviceCategory)->firstOrFail(); // Adjust this based on your model
+        $promo = ServicePromo::where('id', $servicePromo)->firstOrFail();           // Adjust this based on your model
+
+        // Ensure the promo belongs to the specified category
+        if ($promo->service_selection_id !== $category->id) {
+            abort(404); // or handle it in another way, e.g., redirect
+        }
+
+
+
+        
+
+        return view('guest.servicePromoPic', compact('promo', 'category'));
+    }
+
+
     public function adminindex () {
         $services = ServiceSelection::all();
         foreach ($services as $service) {
