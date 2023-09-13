@@ -68,38 +68,59 @@ class UserController extends Controller
         foreach ($usersItems as $usersItem) {
             $usersItem->profile_pic = asset("storage/".rawurlencode($usersItem->profile_pic));
         }
-        return view('admin.users', compact('usersItems'));
+        return view('admin.users.index', compact('usersItems'));
     }
 
-    public function usermanagement_create()
+    public function usermanagement_show(User $user)
     {
-        return view('users.create');
+        $user = User::all();
+        foreach ($user as $user) {
+            $user->profile_pic = asset("storage/".rawurlencode($user->profile_pic));
+        }
+        return view('admin.users.view', compact('user'));
     }
 
-    public function usermanagement_store(Request $request)
+    public function usermanagement_edit(User $user)
     {
+        $user = User::all();
+        foreach ($user as $user) {
+            $user->profile_pic = asset("storage/".rawurlencode($user->profile_pic));
+        }
 
+        return view('admin.users.edit', compact('user'));
     }
 
-    public function usermanagement_edit($id)
+    public function usermanagement_update(Request $request, User $user)
+    
     {
-        $user = User::findOrFail($id);
-        return view('users.edit', compact('user'));
+        $data = $request->validate([
+            'name' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
+            'contact_number' => 'required|string|max:20',
+            'email' => 'required|email|unique:users,email,' . $user->id,
+            'profile_pic' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+
+        if ($request->hasFile('profile_pic')) {
+            $profilePicPath = $this->storeUniqueProfilePic($request->file('profile_pic'), $user->id);
+            $user->profile_pic = $profilePicPath;
+        }
+
+
+
+        $user->update($data);
+
+        return redirect()->route('admin.users.view', $user->id)->with('success', 'User details updated successfully.');
     }
 
-    public function usermanagement_update(Request $request, $id)
-    {
 
+
+        public function usermanagement_destroy(User $user)
+        {
+
+            $user->delete();
+
+            return redirect()->route('admin.users.index')->with('success', 'User deleted successfully.');
+        }
     }
-
-    public function usermanagement_show($id)
-    {
-        $user = User::findOrFail($id);
-        return view('users.show', compact('user'));
-    }
-
-    public function usermanagement_destroy($id)
-    {
-
-    }
-}

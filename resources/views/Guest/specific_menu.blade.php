@@ -13,16 +13,17 @@
     <h1>{{ $categoryName }} Menu</h1>
     
     @foreach ($menus as $menu)
-    <li class="Food-Card-Menu">
-        <div>
-            <!-- Display the menus_image from the Menu table -->
-            <img src="{{ asset('images/menu/' . $menu->menus_image) }}" alt="" class="foodimg" onclick="openModal('{{ $menu->name }}', '{{ $menu->description }}', '{{ asset('images/menu/' . $menu->menus_image) }}')">
-        </div>
-        <div>
-            <p class="Food-name">{{ $menu->name }}</p>
-        </div>
-    </li>
-    @endforeach
+<li class="Food-Card-Menu">
+    <div>
+        <!-- Display the menus_image from the Menu table -->
+        <img src="{{ asset('images/menu/' . $menu->menus_image) }}" alt="" class="foodimg"
+            onclick="openModal('{{ $menu->name }}', '{{ $menu->description }}', '{{ asset('images/menu/' . $menu->menus_image) }}')">
+    </div>
+    <div>
+        <p class="Food-name">{{ $menu->name }}</p>
+    </div>
+</li>
+@endforeach
 
     <div id="modal" class="modal">
         <div class="modal-content">
@@ -60,5 +61,6 @@ window.addEventListener("click", function (event) {
     }
 });
 </script>
+
 
 @endsection

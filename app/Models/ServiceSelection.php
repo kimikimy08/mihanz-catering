@@ -9,8 +9,10 @@ class ServiceSelection extends Model
 {
     use HasFactory;
 
+    protected $table = 'service_selections'; 
     protected $fillable = [
-        'service_category'
+        'services_category',
+        'services_image',
     ];
 
     public function service_promos()

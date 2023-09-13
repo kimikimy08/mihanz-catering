@@ -27,20 +27,36 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/user/{id}', 'App\Http\Controllers\UserController@show')->name('user.show');
     Route::get('/user/{id}/edit', 'App\Http\Controllers\UserController@edit')->name('user.edit');
     Route::put('/user/{id}', 'App\Http\Controllers\UserController@update')->name('user.update');
-    Route::get('/users', 'App\Http\Controllers\UserController@usermanagement')->name('admin.users');
-    Route::get('/users/{user}', 'App\Http\Controllers\UserController@usermanagement_show')->name('users.show');
-    Route::get('/users/create', 'App\Http\Controllers\UserController@usermanagement_create')->name('users.create');
-
-    Route::post('/users', 'App\Http\Controllers\UserController@usermanagement_store')->name('users.store');
-    Route::get('/users/{user}/edit', 'App\Http\Controllers\UserController@usermanagement_edit')->name('users.edit');
+    Route::get('/users', 'App\Http\Controllers\UserController@usermanagement')->name('admin.users.index');
+    Route::get('/users/{user}', 'App\Http\Controllers\UserController@usermanagement_show')->name('admin.users.view');
+    Route::get('/users/{user}/edit', 'App\Http\Controllers\UserController@usermanagement_edit')->name('admin.users.edit');
     Route::put('/users/{user}', 'App\Http\Controllers\UserController@usermanagement_update')->name('users.update');
 
     Route::delete('/users/{user}','App\Http\Controllers\UserController@usermanagement_destroy')->name('users.destroy');
     Route::get('/menu/{category?}', 'App\Http\Controllers\MenuController@menu')->name('admin.menu');
 
-    Route::get('/service', 'App\Http\Controllers\ServiceController@adminindex')->name('admin.services');
+    Route::get('/service', 'App\Http\Controllers\ServiceController@adminindex')->name('admin.services.index');
+    Route::get('/service/create', 'App\Http\Controllers\ServiceController@admincreate')->name('admin.services.create');
+    Route::post('/service', 'App\Http\Controllers\ServiceController@adminstore')->name('admin.services.store');
+    Route::get('/service/{id}/edit', 'App\Http\Controllers\ServiceController@adminedit')->name('admin.services.edit');
+    Route::put('/service/{id}', 'App\Http\Controllers\ServiceController@adminupdate')->name('admin.services.update');
+    Route::delete('/service/{id}', 'App\Http\Controllers\ServiceController@admindestroy')->name('admin.services.destroy');
+    Route::get('/services/{id}', 'App\Http\Controllers\ServiceController@adminview')->name('admin.services.view');
 
-    Route::get('/theme', 'App\Http\Controllers\ServiceController@admin_theme_index')->name('admin.themes');
+    Route::get('/services/{id}/create', 'App\Http\Controllers\ServiceController@pckgcreate')->name('admin.packages.create');
+    Route::post('/services/{id}', 'App\Http\Controllers\ServiceController@pckgstore')->name('admin.packages.store');
+    Route::get('/services/{id}/{p_id}/edit', 'App\Http\Controllers\ServiceController@pckgedit')->name('admin.packages.edit');
+    Route::put('/services/{id}/{p_id}', 'App\Http\Controllers\ServiceController@pckgupdate')->name('admin.packages.update');
+    Route::delete('/service/{id}/{p_id}', 'App\Http\Controllers\ServiceController@pckgdestroy')->name('admin.packages.destroy');
+    
+
+    Route::get('/theme', 'App\Http\Controllers\ServiceController@admin_theme_index')->name('admin.themes.index');
+    Route::get('/theme/create', 'App\Http\Controllers\ServiceController@admin_theme_create')->name('admin.themes.create');
+    Route::post('/theme', 'App\Http\Controllers\ServiceController@admin_theme_store')->name('admin.themes.store');
+    Route::get('/theme/{id}/edit', 'App\Http\Controllers\ServiceController@admin_theme_edit')->name('admin.themes.edit');
+    Route::put('/theme/{id}', 'App\Http\Controllers\ServiceController@admin_theme_update')->name('admin.themes.update');
+    Route::delete('/theme/{id}', 'App\Http\Controllers\ServiceController@admin_theme_destroy')->name('admin.themes.destroy');
+    Route::get('/theme/{id}', 'App\Http\Controllers\ServiceController@admin_theme_view')->name('admin.themes.view');
 
 });
 
@@ -69,3 +85,4 @@ Route::view('/history', 'user.history');
 Route::view('/bookings', 'admin.bookings');
 Route::view('/reservations', 'admin.reservation');
 Route::view('/services/customization', 'guest.customization');
+Route::view('/services/reservations', 'guest.premade');
