@@ -9,6 +9,13 @@ class Menu extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'description',
+        'price',
+        'status'
+    ];
+
     public function menuSelection()
     {
         return $this->belongsTo(MenuSelection::class);

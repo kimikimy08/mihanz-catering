@@ -13,7 +13,7 @@
     </h1>
 
     <div class="add-button"> 
- <a href="" class="btn btn-primary">Add</a> 
+ <a href="{{ route('admin.menu.create') }}" class="btn btn-primary">Add</a> 
         </div> 
 
     @if(isset($menuCategories))
@@ -44,14 +44,15 @@
                     <td>{{ $menu->description }}</td>
                     <td>{{ $menu->price }}</td>
                     <td>{{ $menu->status }}</td>
-                    <td><a href=""><a href="" class="btn btn-info">View</a>
-            <a href="" class="btn btn-warning">Edit</a>
+                    <td><a href="{{ route('admin.menu.view', ['id' => $menu->id]) }}" class="btn btn-info">View</a>
+            
+            <a href="{{ route('admin.menu.edit', ['id' => $menu->id]) }}" class="btn btn-warning">Edit</a>
             
             <!-- Add a "Destroy" button -->
-            <form action="" method="POST" style="display: inline;">
+            <form action="{{ route('admin.menu.destroy', ['id' => $menu->id]) }}" method="POST" style="display: inline;">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this service?')">Delete</button>
+                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this menu?')">Delete</button>
             </form></a></td>
                 </tr>
             @endforeach

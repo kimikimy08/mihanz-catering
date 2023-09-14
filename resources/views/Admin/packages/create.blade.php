@@ -17,7 +17,6 @@
             <label for="service_promo_image">Image</label>
             <input type="file" name="image" id="image">
         </div>
-        <!-- Add form fields for other service promo properties as needed -->
         <button type="submit" class="btn btn-primary">Create Service Promo</button>
     </form>
 </div>

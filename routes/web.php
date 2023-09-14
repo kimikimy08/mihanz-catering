@@ -35,6 +35,12 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::delete('/users/{user}','App\Http\Controllers\UserController@usermanagement_destroy')->name('users.destroy');
     
     Route::get('/menu/{category?}', 'App\Http\Controllers\MenuController@menu')->name('admin.menu.index');
+    Route::get('/menu/all/create', 'App\Http\Controllers\MenuController@menucreate')->name('admin.menu.create');
+    Route::post('/menu', 'App\Http\Controllers\MenuController@menustore')->name('admin.menu.store');
+    Route::get('/menu/all/{id}/edit', 'App\Http\Controllers\MenuController@menuedit')->name('admin.menu.edit');
+    Route::put('/menu/all/{id}', 'App\Http\Controllers\MenuController@menuupdate')->name('admin.menu.update');
+    Route::delete('/menu/{id}', 'App\Http\Controllers\MenuController@menudestroy')->name('admin.menu.destroy');
+    Route::get('/menu/all/{id}', 'App\Http\Controllers\MenuController@menuview')->name('admin.menu.view');
 
     Route::get('/service', 'App\Http\Controllers\ServiceController@adminindex')->name('admin.services.index');
     Route::get('/service/create', 'App\Http\Controllers\ServiceController@admincreate')->name('admin.services.create');
