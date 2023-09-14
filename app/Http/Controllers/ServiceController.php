@@ -116,65 +116,53 @@ class ServiceController extends Controller
 
     public function admin_theme_edit($id)
     {
-        $service = ServiceSelection::findOrFail($id);
-        $service->services_image = asset("images/services/service_selection/" . rawurlencode($service->services_image));
-        return view('admin.services.edit', compact('service'));
+        $theme = ThemeSelection::findOrFail($id);
+        $serviceSelections = ServiceSelection::pluck('services_category', 'id');
+        $theme->theme_image = asset("images/themes/" . rawurlencode($theme->theme_image));
+        return view('admin.themes.edit', compact('theme', 'serviceSelections'));
     }
 
     public function admin_theme_update(Request $request, $id)
     {
         $request->validate([
-            'services_category' => 'required|string|unique:service_selections,services_category,' . $id,
+            'theme_name' => 'required|unique:theme_selections,theme_name,' . $id,
+            'service_selection_id' => 'required|exists:service_selections,id',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $service = ServiceSelection::findOrFail($id);
+        $theme = ThemeSelection::findOrFail($id);
 
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $imagePath = 'images/services/service_selection/';
+            $imagePath = 'images/themes/';
             $imageName = time() . '_' . $image->getClientOriginalName();
             $image->move(public_path($imagePath), $imageName);
 
-            $service->services_image = $imageName;
+            $theme->theme_image = $imageName;
         }
 
  
-        $service->services_category = $request->input('services_category');
+        $theme->theme_name = $request->input('theme_name');
+        $theme->serviceSelection()->associate(ServiceSelection::find($request->input('service_selection_id')));
 
   
-        $service->save();
+        $theme->save();
 
-        return redirect()->route('admin.services.index')->with('success', 'Service updated successfully.');
+        return redirect()->route('admin.themes.index')->with('success', 'Theme updated successfully.');
     }
 
-
-
-    public function admin_theme_view($id)
-    {
-
-        $service = ServiceSelection::findOrFail($id);
- 
-        $packages = ServicePromo::where('service_selection_id', $service->id)->get();
-
-        foreach ($packages as $package) {
-            $package->service_promo_image = asset("images/services/packages/".rawurlencode($package->service_promo_image));
-        }
-    
-        return view('admin.services.view', compact('service', 'packages'));
-    }
 
     public function admin_theme_destroy($id)
     {
-        $service = ServiceSelection::find($id);
+        $theme = ThemeSelection::find($id);
 
-        if (!$service) {
-            return redirect()->route('admin.services.index')->with('error', 'Service not found.');
+        if (!$theme) {
+            return redirect()->route('admin.themes.index')->with('error', 'Theme not found.');
         }
+        
+        $theme->delete();
 
-        $service->delete();
-
-        return redirect()->route('admin.services.index')->with('success', 'Service deleted successfully.');
+        return redirect()->route('admin.themes.index')->with('success', 'Theme deleted successfully.');
     }
 
 

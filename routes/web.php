@@ -33,7 +33,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::put('/users/{user}', 'App\Http\Controllers\UserController@usermanagement_update')->name('users.update');
 
     Route::delete('/users/{user}','App\Http\Controllers\UserController@usermanagement_destroy')->name('users.destroy');
-    Route::get('/menu/{category?}', 'App\Http\Controllers\MenuController@menu')->name('admin.menu');
+    
+    Route::get('/menu/{category?}', 'App\Http\Controllers\MenuController@menu')->name('admin.menu.index');
 
     Route::get('/service', 'App\Http\Controllers\ServiceController@adminindex')->name('admin.services.index');
     Route::get('/service/create', 'App\Http\Controllers\ServiceController@admincreate')->name('admin.services.create');

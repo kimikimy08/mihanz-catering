@@ -19,8 +19,12 @@
             <td>{{ $theme->serviceSelection->services_category }}</td>
             <td>{{ $theme->theme_name }}</td>
             <td>
-                <a href="" class="btn btn-info">View</a> <!-- Show button -->
-                <a href="" class="btn btn-warning">Edit</a> <!-- Edit button -->
+                <a href="{{ route('admin.themes.edit', ['id' => $theme->id]) }}" class="btn btn-warning">Edit</a> <!-- Edit button -->
+                <form action="{{ route('admin.themes.destroy', ['id' => $theme->id]) }}" method="POST" style="display: inline;">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this service?')">Delete</button>
+            </form>
             </td>
         </tr>
         @endforeach

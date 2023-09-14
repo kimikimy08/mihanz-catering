@@ -37,7 +37,7 @@ class MenuController extends Controller
             $menuItem->menus_image = asset("images/menu/".rawurlencode($menuItem->menus_image));
         }
     
-        return view('admin.menu', compact('menuCategory', 'menuItems', 'menuCategories'));
+        return view('admin.menu.index', compact('menuCategory', 'menuItems', 'menuCategories'));
     }
 
     public function specificmenuindex($category = null)
