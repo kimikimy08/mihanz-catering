@@ -81,6 +81,7 @@ Route::get('/services', 'App\Http\Controllers\ServiceController@index')->name('g
 Route::get('/themes', 'App\Http\Controllers\ServiceController@themesindex')->name('guest.themes');
 Route::get('/services/{serviceCategory}/promos', 'App\Http\Controllers\ServiceController@servicePromoIndex')->name('guest.servicePromoIndex');
 Route::get('/services/{serviceCategory}/promos/{servicePromo}', 'App\Http\Controllers\ServiceController@servicePromoPic')->name('guest.servicePromoPic');
+Route::get('/services/{serviceCategory}/promos/{servicePromo}/order', 'App\Http\Controllers\ServiceController@serviceOrder')->name('guest.serviceOrder');
 
 
 
