@@ -62,4 +62,9 @@ class User extends Authenticatable
         return $this->role->name === $roleName;
     }
 
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class);
+    }
+
 }

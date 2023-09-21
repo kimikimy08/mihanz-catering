@@ -10,7 +10,7 @@
         <ul >
             @foreach ($servicesItems as $key => $servicesItem)
             <li  class="bd" style="background-image: linear-gradient(rgba(0,0,0,50%),rgba(0,0,0,50%)), url({{ $servicesItem->services_image }});">
-            <a href="/services/{{ $servicesItem->services_category }}/promos">{{ $servicesItem->services_category }}</a>
+            <a href="{{ route('guest.servicePromoIndex', ['serviceCategory' => $servicesItem->services_category]) }}">{{ $servicesItem->services_category }}</a>
                 </li>
             @endforeach
 

@@ -74,7 +74,7 @@
                                     <a class="nav-link" href="{{ url('/menus') }}">{{ __('Menu') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/services') }}">{{ __('Services') }}</a>
+                                    <a class="nav-link" href="{{ url('/service') }}">{{ __('Services') }}</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/themes') }}">{{ __('Theme') }}</a>
@@ -139,6 +139,7 @@
         </nav>
 
         <main class="py-4">
+        @include('flash-messages')
             @yield('content')
         </main>
     </div>

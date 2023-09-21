@@ -72,6 +72,9 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/user/{id}', 'App\Http\Controllers\UserController@show')->name('user.show');
     Route::get('/user/{id}/edit', 'App\Http\Controllers\UserController@edit')->name('user.edit');
     Route::put('/user/{id}', 'App\Http\Controllers\UserController@update')->name('user.update');
+    Route::get('/services/{serviceCategory}/promos/{servicePromo}/reservations', 'App\Http\Controllers\ReservationController@premade_create')->name('user.premade.create');
+    Route::post('/user/services/{serviceCategory}/promos/{servicePromo}', 'App\Http\Controllers\ReservationController@premade_store')->name('user.premade.store');
+    Route::get('/summary', 'App\Http\Controllers\ReservationController@showSummary')->name('user.premade.summary');
 });
 
 Route::get('/menus', 'App\Http\Controllers\MenuController@index')->name('guest.menus');
@@ -92,5 +95,4 @@ Route::view('/userprofile', 'userprofile.index');
 Route::view('/history', 'user.history');
 Route::view('/bookings', 'admin.bookings');
 Route::view('/reservations', 'admin.reservation');
-Route::view('/services/customization', 'guest.customization');
-Route::view('/services/reservations', 'guest.premade');
+

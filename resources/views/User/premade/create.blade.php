@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('content')
@@ -7,6 +8,7 @@
 
 <div class="Customization-form">
         <h1 id="title">Reservation Form</h1>
+        
         <div class="form-information">
             <h1 class="Form-title">
                 PLEASE READ FIRST
@@ -34,7 +36,12 @@
             </ul>
 
         </div>
-        <form method="POST" action="{{ route('guest.premade.store', ['serviceCategory' => $categoryName, 'servicePromo' => $promo]) }}" enctype="multipart/form-data">
+       
+    
+
+
+
+        <form method="POST" action="{{ route('user.premade.store', ['serviceCategory' => $categoryName, 'servicePromo' => $promo]) }}" enctype="multipart/form-data">
         @csrf
             <table class="table-Information">
                 <tr>
@@ -73,7 +80,7 @@
                 
                 
             </table>                            
-</form>  
+
     </div>
     <main class="optionForm">
         <table >
@@ -122,7 +129,7 @@
                 <td>Vegetable:</td>
                 <td></td>
                 <td>
-                <Select>
+                <Select name="menu_id_veg" id="menu_id_veg">
                 <option value="" selected disabled>Please choose</option>
                 @foreach($vegetables as $vegetable)
                 
@@ -135,7 +142,7 @@
                 <td>Pasta/Pansit:</td>
                 <td></td>
                 <td>
-                <Select>
+                <Select name="menu_id_pasta" id="menu_id_pasta">
                 <option value="" selected disabled>Please choose</option>
                 @foreach($pastas as $pasta)
                 
@@ -148,7 +155,7 @@
                 <td>Desserts:</td>
                 <td></td>
                 <td>
-                <Select>
+                <Select name="menu_id_dessert" id="menu_id_dessert">
                 <option value="" selected disabled>Please choose</option>
                 @foreach($desserts as $dessert)
                 
@@ -162,7 +169,7 @@
                 <td></td>
                 <td>
                     
-                <select name="drink_id" id="drink_id">
+                <select name="menu_id_drink" id="menu_id_drink">
                 <option value="" selected disabled>Please choose</option>
                 @foreach($drinks as $drink)
                 
@@ -172,12 +179,9 @@
             </td>
             </tr>
         </table>
-        <!-- Terms and condition -->
-        <div class="btn-FoodCustom"><button type="submit" id="openModalButton">Proceed</button></div>
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <span class="close" id="closeModalButton">&times;</span>
-               <div>
+
+        <div class="btn-FoodCustom">
+        <div>
                 <h1>Terms and Condition</h1>
                 <section>
                     <h1>1.Reservation.</h1>
@@ -253,18 +257,28 @@
                         </ol>
 
                 </section>
-                <input type="radio" name="" id="" checked>Accept and Continue<br>
-                <input type="radio" name="" id="">Decline
+                <select id="terms_and_conditions" name="terms_and_conditions">
+    <option value="" selected disabled>Please choose</option>
+    <option value="accept">Accept</option>
+    <option value="decline">Decline</option>
+</select>
+    <br>
+                <button type="submit">Proceed</button>
                 
         </div>
-        <button><a href="PremadeSum.html">Proceed</a></button>
+         
+              
             </div>
-        </div>
+       
     </main>
+
+    </form>  
+
+   
 
     <script>
         
-
+      
         const menuCategorySelect = document.getElementById('menu_category');
         const menuSelect = document.getElementById('menu_id');
 

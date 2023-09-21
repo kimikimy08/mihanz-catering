@@ -27,15 +27,27 @@ return new class extends Migration
             $table->foreign('chicken_fish_seafood_menu_selection_id')->references('id')->on('menu_selections');
             $table->unsignedBigInteger('pork_beef_menu_id')->nullable();
             $table->unsignedBigInteger('chicken_fish_seafood_menu_id')->nullable();
+            $table->unsignedBigInteger('vegetable_menu_id')->nullable();
+            $table->unsignedBigInteger('pasta_menu_id')->nullable();
+            $table->unsignedBigInteger('dessert_menu_id')->nullable();
+            $table->unsignedBigInteger('drink_menu_id')->nullable();
             $table->foreign('pork_beef_menu_id')->references('id')->on('menus');
             $table->foreign('chicken_fish_seafood_menu_id')->references('id')->on('menus');
+            $table->foreign('vegetable_menu_id')->references('id')->on('menus');
+            $table->foreign('pasta_menu_id')->references('id')->on('menus');
+            $table->foreign('dessert_menu_id')->references('id')->on('menus');
+            $table->foreign('drink_menu_id')->references('id')->on('menus');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->boolean('terms_accepted')->default(false);
             $table->string('order_type')->nullable();
+            $table->unsignedBigInteger('promo_id')->nullable();
+            $table->foreign('promo_id')->references('id')->on('service_promos');
             $table->timestamps();
         });
     }
+
+    
 
     /**
      * Reverse the migrations.

@@ -39,9 +39,12 @@ class ServiceController extends Controller
 
     public function servicePromoPic($serviceCategory, $servicePromo)
     {
-    
+        $categoryName = ServiceSelection::where('services_category', $serviceCategory)->first()->services_category;
         $category = ServiceSelection::where('services_category', $serviceCategory)->firstOrFail(); 
-        $promo = ServicePromo::where('id', $servicePromo)->firstOrFail();          
+        $promo = ServicePromo::where('id', $servicePromo)->firstOrFail(); 
+        $promos = ServicePromo::whereHas('serviceSelection', function ($query) use ($serviceCategory) {
+            $query->where('services_category', $serviceCategory);
+        })->get();         
 
 
         if ($promo->service_selection_id !== $category->id) {
@@ -52,7 +55,7 @@ class ServiceController extends Controller
 
         
 
-        return view('guest.servicePromoPic', compact('promo', 'category'));
+        return view('guest.servicePromoPic', compact('promo', 'category', 'categoryName', 'promos'));
     }
 
 
