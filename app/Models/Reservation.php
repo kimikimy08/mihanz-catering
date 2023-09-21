@@ -32,5 +32,34 @@ class Reservation extends Model
         return $this->belongsTo(MenuSelection::class);
     }
 
+    public function porkBeefMenu()
+    {
+        return $this->belongsTo(Menu::class, 'pork_beef_menu_id');
+    }
+
+    public function chickenFishSeafoodMenu()
+    {
+        return $this->belongsTo(Menu::class, 'chicken_fish_seafood_menu_id');
+    }
+
+    public function vegetableMenu()
+    {
+        return $this->belongsTo(Menu::class, 'vegetable_menu_id');
+    }
+
+    public function pastaMenu()
+    {
+        return $this->belongsTo(Menu::class, 'pasta_menu_id');
+    }
+
+    public function dessertMenu()
+    {
+        return $this->belongsTo(Menu::class, 'dessert_menu_id');
+    }
+
+    public function drinkMenu()
+    {
+        return $this->belongsTo(Menu::class, 'drink_menu_id');
+    }
 
 }

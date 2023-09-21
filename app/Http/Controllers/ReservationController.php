@@ -153,14 +153,20 @@ class ReservationController extends Controller
         $user = Auth::user();
 
         // Retrieve the most recent reservation for the authenticated user
-        $reservation = $user->reservations()->latest()->first();
+        $reservation = $user->reservations()->latest()->with([
+            'porkBeefMenu',
+            'chickenFishSeafoodMenu',
+            'vegetableMenu',
+            'pastaMenu',
+            'dessertMenu',
+            'drinkMenu'
+        ])->first();
 
         if (!$reservation) {
             return redirect()->route('reservation.index')->with('error', 'Reservation not found.');
         }
 
-        return redirect()->back()
-            ->with('success', 'Reservation successfully submitted!');
+        return view('summary', compact('reservation'));
     }
 
 }
